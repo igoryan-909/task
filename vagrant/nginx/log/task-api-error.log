@@ -1,0 +1,12 @@
+2017/07/13 19:19:13 [error] 1747#1747: *385 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+yii\base\ViewNotFoundException: The view file does not exist: /app/api/views/site/error.php in /app/vendor/yiisoft/yii2/base/View.php:229
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/base/View.php(152): yii\base\View->renderFile('/app/api/views/...', Array, Object(api\controllers\SiteController))
+#1 /app/vendor/yiisoft/yii2/base/Controller.php(381): yii\base\View->render('error', Array, Object(api\controllers\SiteController))
+#2 /app/vendor/yiisoft/yii2/web/ErrorAction.php(128): yii\base\Controller->render('error', Array)
+#3 /app/vendor/yiisoft/yii2/web/ErrorAction.php(107): yii\web\ErrorAction->renderHtmlResponse()
+#4 [internal function]: yii\web\ErrorAction->run()
+#5 /app/vendor/yiisoft/yii2/base/Action.php(94): call_user_func_array(Array, Array)
+#6 /app/vendor/yiisoft/yii2/base/Controller.php(156): yii\base\Action->runWithParams(Array)
+#7 /app/vendor/yiisoft/yii2/base/Module.php(523): yii\base\Controller->runAction('error', Array)
+#8 /app/vendor/" while reading upstream, client: 192.168.83.1, server: task-api.dev, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "task-api.dev"
