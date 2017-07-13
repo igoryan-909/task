@@ -35,14 +35,12 @@ AppAsset::register($this);
             'class' => 'navbar-inverse navbar-fixed-top',
         ],
     ]);
-    $menuItems = [
-        ['label' => Yii::t('app', 'Задачи'), 'url' => ['/task/index']],
-        ['label' => Yii::t('app', 'Статусы'), 'url' => ['/status/index']],
-        ['label' => Yii::t('app', 'Пользователи'), 'url' => ['/user/index']],
-    ];
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
     } else {
+        $menuItems[] = ['label' => Yii::t('app', 'Задачи'), 'url' => ['/task/index']];
+        $menuItems[] = ['label' => Yii::t('app', 'Статусы'), 'url' => ['/status/index']];
+        $menuItems[] = ['label' => Yii::t('app', 'Пользователи'), 'url' => ['/user/index']];
         $menuItems[] = '<li>'
             . Html::beginForm(['/site/logout'], 'post')
             . Html::submitButton(
